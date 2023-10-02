@@ -3,9 +3,7 @@ import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import { BsGeoAlt, BsSearch } from "react-icons/bs";
 import { Link, NavLink} from "react-router-dom";
 import MainLogo from '../img/logo-main.png';
-import WhiteLogo from '../img/logo-white.png';
 import ToggleDark from '../img/toggle-icon-dark.svg';
-import ToggleLight from '../img/toggle-icon-light.svg';
 import axios from "axios";
 import toast from "react-hot-toast";
 
@@ -37,27 +35,27 @@ function ConSidebar() {
 
       // change logo of navbar
 
-      const [logo, setLogo] = useState({
-            src: "",
-      })
-      const ChangeLogo = () => setLogo(window.scrollY > 50)
-      useEffect(() => {
-            window.addEventListener("scroll", ChangeLogo);
-      }, []);
+      // const [logo, setLogo] = useState({
+      //       src: "",
+      // })
+      // const ChangeLogo = () => setLogo(window.scrollY > 50)
+      // useEffect(() => {
+      //       window.addEventListener("scroll", ChangeLogo);
+      // }, []);
 
       // change logo of navbar
 
       //change color of navbar
 
-      const [color, setColor] = useState(false)
-      const changeColor = () => {
-            if (window.scrollY >= 50) {
-                  setColor(true)
-            }
-            else
-                  setColor(false)
-      }
-      window.addEventListener('scroll', changeColor)
+      // const [color, setColor] = useState(false)
+      // const changeColor = () => {
+      //       if (window.scrollY >= 50) {
+      //             setColor(true)
+      //       }
+      //       else
+      //             setColor(false)
+      // }
+      // window.addEventListener('scroll', changeColor)
 
       //change color of navbar
 
@@ -104,28 +102,28 @@ function ConSidebar() {
                         </Menu>
                   </Sidebar >
 
-                  <nav className={color ? 'main-nav nav-bg' : 'main-nav'}>
+                  <nav className="nav-bg main-nav">
                         <div className="container">
                               <div className="d-flex navbar-in justify-content-between align-items-center">
                                     <div className="d-flex justify-content-start">
-                                          <div className="ham-menu pe-2 text-white">
-                                                <img alt="toggleicon" src={logo ? ToggleDark : ToggleLight} onClick={() => setToggled(!toggled)} />
+                                          <div className="ham-menu pe-2 text-white ">
+                                                <img alt="toggleicon" src={ToggleDark} onClick={() => setToggled(!toggled)} />
                                           </div>
                                           <div className="logo">
                                                 <Link to={'/'}>
-                                                      <img alt="logo" src={logo ? MainLogo : WhiteLogo} />
+                                                      <img alt="logo" src={MainLogo} />
                                                 </Link>
                                           </div>
                                     </div>
 
                                     <div className="d-flex justify-content-end">
                                           <div className="search-box d-flex align-items-center justify-content-end me-2">
-                                                <button className={color ? 'btn-search-scroll' : 'btn-search'}><BsSearch className={color ? 'icon-dark' : 'icon-light'} /></button>
-                                                <input type="text" className={color ? 'input-search-scroll' : 'input-search'} placeholder="Type to Search..." />
+                                                <button className='btn-search'><BsSearch className='icon-dark'/></button>
+                                                <input type="text" className='input-search' placeholder="Type to Search..." />
                                           </div>
                                           <div className="d-flex justify-content-end align-items-center text-white">
                                                 <Link to={"/StoreLocator"}>
-                                                      <BsGeoAlt className={color ? 'icon-dark' : 'icon-light'} />
+                                                      <BsGeoAlt className='icon-dark'/>
                                                 </Link>
 
                                           </div>

@@ -11,6 +11,15 @@
 
 
 @media screen and (max-width: 600px) {
+
+      .ham-menu{
+            display: block;
+      }
+
+      .logo img {
+            height: 1.5rem;
+          }
+
       .pro-card {
             height: 15rem;
             width: 100%;
