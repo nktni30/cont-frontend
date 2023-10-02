@@ -23,7 +23,6 @@ import CreateBrand from "./Admin/pages/CreateBrands"
 import CreateProduct from "./Admin/pages/CreateProduct"
 import GetProducts from "./Admin/pages/Products"
 
-export const baseUrl = process.env.API_URL;
 
 function App() {
   return (
