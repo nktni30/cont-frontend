@@ -157,22 +157,23 @@
             width: 80%;
             background-color: white;
             z-index: 99;
-            /* position: absolute; */
-            margin: 10%;
-            padding: 1.5rem;
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-            /* display: none; */
-      }
-
-      .show-product-filter {
-            height: auto;
-            width: 80%;
-            background-color: white;
-            z-index: 99;
             position: absolute;
             margin: 10%;
             padding: 1.5rem;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            display: none;
+      }
+
+      .show-product-filter {
+            display: block;
+            height: auto;
+            width: 80%;
+            background-color: white;
+            z-index: 99;
+            position: fixed;
+            margin: 0 7.5%;
+            padding: 1.5rem;
+            box-shadow: rgba(110, 110, 112, 0.494) 0px 7px 29px 0px;
       }
 
 

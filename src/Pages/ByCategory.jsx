@@ -78,9 +78,9 @@ const ByCategory = () => {
                         <div className="card px-md-3 py-lg-4 py-2 rounded-0 border-0">
                           <div className="row">
                             <div className="col-lg-12 col-5">
-                              <div className="prod-img d-flex justify-content-center align-items-center">
+                              <div className="prod-img p-2 p-lg-0 overflow-hidden d-flex justify-content-center align-items-center">
                                 <img
-                                  className="img-fluid"
+                                  className="img-thumbnail border-0"
                                   src={`${baseUrl}/api/v1/product/product-photo/${p?._id}`}
                                   alt={p?.name}
                                 />

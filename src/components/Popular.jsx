@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 // import toast from 'react-hot-toast';
-const URL = "https://conterials-backend.onrender.com"
+const baseUrl = "https://conterials-backend.onrender.com"
 
 const Popular = () => {
 
@@ -11,7 +11,7 @@ const Popular = () => {
       //get Pupular products
       const getPopularProducts = async () => {
             try {
-                  const { data } = await axios.get(`${URL}/api/v1/product/popular`);
+                  const { data } = await axios.get(`${baseUrl}/api/v1/product/popular`);
                   setProducts(data.products);
             } catch (error) {
                   console.log(error);
@@ -44,7 +44,7 @@ const Popular = () => {
                           <div className='col mb-4'>
                                 <div class="pro-card">
                                       <div className='img-box d-flex justify-content-center'>
-                                            <img alt={p.name} src={`${URL}/api/v1/product/product-photo/${p._id}`} class="img-fluid" />
+                                            <img alt={p.name} src={`${baseUrl}/api/v1/product/product-photo/${p._id}`} class="img-fluid" />
                                       </div>
 
                                       <div class="card-body">

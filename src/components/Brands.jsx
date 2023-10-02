@@ -5,7 +5,7 @@ import "swiper/css/bundle";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const URL = "https://conterials-backend.onrender.com"
+const baseUrl = "https://conterials-backend.onrender.com"
 
 const Brands = () => {
 
@@ -14,7 +14,7 @@ const Brands = () => {
   //get all cat
   const getAllBrand = async () => {
     try {
-      const { data } = await axios.get(`${URL}/api/v1/brand/get-brand`);
+      const { data } = await axios.get(`${baseUrl}/api/v1/brand/get-brand`);
       if (data?.success) {
         setBrands(data?.brand);
       }
@@ -73,7 +73,7 @@ const Brands = () => {
                     key={b._id}
                     to={`/products/brand/${b._id}`}>
                     <div className="brand-card">
-                      <img alt={b.brnadname} className="brand-img" src={`${URL}/api/v1/brand/brand-photo/${b._id}`} />
+                      <img alt={b.brnadname} className="brand-img" src={`${baseUrl}/api/v1/brand/brand-photo/${b._id}`} />
                     </div>
                   </Link>
                 </SwiperSlide>

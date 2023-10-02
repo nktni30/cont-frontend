@@ -1,18 +1,25 @@
 import React, { useState, useEffect } from "react";
 import Footer from "../components/Footer";
+import { BsFunnelFill } from "react-icons/bs";
 import axios from "axios";
 import { Link } from "react-router-dom";
+
 
 const baseUrl = "https://conterials-backend.onrender.com"
 
 const Products = () => {
 
+  const [addClass, setAddClass] = useState(false);
 
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [brands, setBrands] = useState([]);
   const [Checked, setChecked] = useState([]);
 
+  const handleButtonClick = () => {
+    // Toggle the state to add or remove the class
+    setAddClass(!addClass);
+  };
 
   //getall products
   const getAllProducts = async () => {
@@ -100,34 +107,43 @@ const Products = () => {
           <div className="col-md-12">
             <div className="row">
               <div className="col-md-2">
-                
+
               </div>
               <div className="col-md-10">
-                <div className="row d-flex justify-content-end">
-                  <div className="col-8"></div>
-                  <div className="col-4 d-flex justify-content-end">
-                    <div className="d-flex justify-content-between align-items-center">
-                    <label style={{whiteSpace: 'pre-wrap'}}>Sort: </label>
-                    <select className="sort-products" type="select">
-                      <option value="Relevance">Relevance</option>
-                      <option value="Products">New Products</option>
-                      <option value="Old Products">Old Products</option>
-                    </select>
+                <div className="row">
+
+                  {/* Sorting */}
+                  <div className="col-6 col-lg-6">
+                    <div className="d-flex align-items-center">
+                      <label style={{ whiteSpace: 'pre-wrap' }}>Sort: </label>
+                      <select className="sort-products" type="select">
+                        <option value="Relevance">Relevance</option>
+                        <option value="Products">New Products</option>
+                        <option value="Old Products">Old Products</option>
+                      </select>
                     </div>
                   </div>
+                  {/* Filter button */}
+                  <div className='col-6 col-lg-6 d-flex justify-content-end align-items-center'>
+                    <label className='label'>Filter:  </label>
+                    <span className=''>
+                      <BsFunnelFill onClick={handleButtonClick}/>
+                    </span>
+                  </div>
+
                 </div>
               </div>
             </div>
             <div className="row">
               <div className="col-md-2 col-sm-12 col-lg-2">
                 {/* prodyct filter */}
-                <div className='product-filter'>
-                  <div className='filter-body'>
-                  <div className="row">
-                  <div className="col"><h5>FILTERS</h5></div>
-                  <div className="col d-flex justify-content-end"><button className="btn btn-sm btn-primary">Reset</button></div>
 
-                </div>
+                <div className={addClass ? 'product-filter show-product-filter' : 'product-filter'}>
+                  <div className='filter-body'>
+                    <div className="row">
+                      <div className="col"><h5>FILTERS</h5></div>
+
+                    </div>
                     <hr />
                     <div className='row'>
                       <h6 className=''>Categories</h6>
@@ -156,19 +172,15 @@ const Products = () => {
                       </div>
                     </div>
                     <hr />
-                    {/* <div className='row'>
-                      <h6 className=''>Color</h6>
-                      <div className='color-select-'></div>
-                    </div>
-                    <hr /> */}
-                    {/* <div className='row d-flex justify-content-evenly'>
+                    
+                    <div className='row d-flex justify-content-evenly'>
                       <div className='col'>
                         <button type='button' className='btn btn-outline-primary'>Clear</button>
                       </div>
                       <div className='col d-flex justify-content-end'>
                         <button className='btn btn-primary'>Apply</button>
                       </div>
-                    </div> */}
+                    </div>
                   </div>
                 </div>
 

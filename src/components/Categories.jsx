@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/free-mode";
 import axios from "axios";
-const URL = "https://conterials-backend.onrender.com"
+const baseUrl = "https://conterials-backend.onrender.com"
 
 
 const Categories = () => {
@@ -15,7 +15,7 @@ const Categories = () => {
   //get all cat
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get(`${URL}/api/v1/category/get-category`);
+      const { data } = await axios.get(`${baseUrl}/api/v1/category/get-category`);
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -76,7 +76,7 @@ const Categories = () => {
                         <img
                           alt="categories"
                           className="img-fluid"
-                          src={`${URL}/api/v1/category/category-photo/${item._id}`}
+                          src={`${baseUrl}/api/v1/category/category-photo/${item._id}`}
                         />
                       </div>
                       <div className="img-overlay"></div>

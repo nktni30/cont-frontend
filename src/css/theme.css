@@ -359,3 +359,49 @@ form textarea{
   width: 100% !important;
   margin: 0 auto;
 }
+
+.product-filter {
+
+  position: sticky;
+  top: 5rem;
+  /* display: none; */
+  display: block;
+}
+
+.filter-categories {
+  background-color: white;
+  display: inline-block;
+  margin: .1rem .2rem;
+  border-radius: .2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-categories label {
+  float: left;
+}
+
+.filter-categories label span {
+  text-align: center;
+  padding: .2rem .4rem;
+  display: block;
+  font-size: small;
+}
+
+.filter-categories label input {
+  position: absolute;
+  display: none;
+  color: var(--light-text) !important;
+}
+
+.filter-categories label input+span {
+  color: var(--light-text);
+}
+
+.filter-categories input:checked+span {
+  color: #ffffff;
+}
+
+.cat input:checked+span {
+  background-color: var(--con-secondary);
+}
