@@ -9,6 +9,8 @@ import ToggleLight from '../img/toggle-icon-light.svg';
 import axios from "axios";
 import toast from "react-hot-toast";
 
+const URL = "https://conterials-backend.onrender.com"
+
 function ConSidebar() {
       
       const [categories, setCategories] = useState([]);
@@ -17,7 +19,7 @@ function ConSidebar() {
       //get all cat
       const getAllCategory = async () => {
             try {
-                  const { data } = await axios.get("/api/v1/category/get-category");
+                  const { data } = await axios.get(`${URL}/api/v1/category/get-category`);
                   if (data?.success) {
                         setCategories(data?.category);
                   }

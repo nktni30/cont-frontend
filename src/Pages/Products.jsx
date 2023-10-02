@@ -3,6 +3,8 @@ import Footer from "../components/Footer";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+const baseUrl = "https://conterials-backend.onrender.com"
+
 const Products = () => {
 
 
@@ -15,10 +17,10 @@ const Products = () => {
   //getall products
   const getAllProducts = async () => {
     try {
-      const { data } = await axios.get("/api/v1/product/get-product");
+      const { data } = await axios.get(`${baseUrl}/api/v1/product/get-product`);
       setProducts(data.products);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       // toast.error("Someething Went Wrong");
     }
   };
@@ -26,24 +28,24 @@ const Products = () => {
   //get all cat
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get("/api/v1/category/get-category");
+      const { data } = await axios.get(`${baseUrl}/api/v1/category/get-category`);
       if (data?.success) {
         setCategories(data?.category);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
   //get all cat
   const getAllBrand = async () => {
     try {
-      const { data } = await axios.get("/api/v1/brand/get-brand");
+      const { data } = await axios.get(`${baseUrl}/api/v1/brand/get-brand`);
       if (data?.success) {
         setBrands(data?.brand);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
 
     }
   };
@@ -69,10 +71,10 @@ const Products = () => {
 
   const filterProduct = async () => {
     try {
-      const { data } = await axios.post(`/api/v1/product/product-filters`, { Checked })
+      const { data } = await axios.post(`${baseUrl}/api/v1/product/product-filters`, { Checked })
       setProducts(data?.products)
     } catch (error) {
-      console.log(error)
+      // console.log(error)
     }
   }
 
@@ -184,7 +186,7 @@ const Products = () => {
                               <div className="prod-img d-flex justify-content-center align-items-center">
                                 <img
                                   className="img-fluid"
-                                  src={`/api/v1/product/product-photo/${p?._id}`}
+                                  src={`${baseUrl}/api/v1/product/product-photo/${p?._id}`}
                                   alt={p.name}
                                 />
                               </div>

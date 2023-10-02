@@ -6,6 +6,8 @@ import { Select } from "antd";
 import { useNavigate } from "react-router-dom";
 const { Option } = Select;
 
+const baseUrl = "https://conterials-backend.onrender.com"
+
 const CreateProduct = () => {
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
@@ -20,39 +22,40 @@ const CreateProduct = () => {
   const [offer, setOffer] = useState(false);
   const [photo, setPhoto] = useState("");
 
+
   //get all category
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get("/api/v1/category/get-category ");
+      const { data } = await axios.get(`${baseUrl}/api/v1/category/get-category`);
       if (data?.success) {
         setCategories(data?.category);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error("Something wwent wrong in getting catgeory");
     }
   };
   //get all subcategory
   const getAllSubCategory = async () => {
     try {
-      const { data } = await axios.get("/api/v1/subcategory/get-subcategory");
+      const { data } = await axios.get(`${baseUrl}/api/v1/subcategory/get-subcategory`);
       if (data?.success) {
         setSubCategories(data?.subcategory);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error("Something went wrong in getting catgeory");
     }
   };
   // get all brand
   const getAllBrand = async () => {
     try {
-      const { data } = await axios.get("/api/v1/brand/get-brand");
+      const { data } = await axios.get(`${baseUrl}/api/v1/brand/get-brand`);
       if (data?.success) {
         setBands(data?.brand);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error("Something wwent wrong in getting catgeory");
     }
   };
@@ -77,7 +80,7 @@ const CreateProduct = () => {
       productData.append("popular", popular);
       productData.append("offer", offer);
       const { data } = axios.post(
-        "/api/v1/product/create-product",
+        `${baseUrl}/api/v1/product/create-product`,
         productData
       );
       if (data?.success) {
@@ -87,7 +90,7 @@ const CreateProduct = () => {
         navigate("/dashboard/admin/products");
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error("something went wrong");
     }
   };

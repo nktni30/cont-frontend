@@ -3,6 +3,7 @@ import AdminMenu from "../components/AdminMenu";
 import toast from "react-hot-toast";
 import axios from "axios";
 // import CategoryForm from "../../components/Form/CategoryForm";
+const baseUrl = "https://conterials-backend.onrender.com"
 
 // import { Modal } from "antd";
 const CreateCategory = () => {
@@ -18,7 +19,7 @@ const CreateCategory = () => {
       const categorytData = new FormData();
       categorytData.append("name", name);
       categorytData.append("photo", photo);
-      const { data } = await axios.post("/api/v1/category/create-category",
+      const { data } = await axios.post(`${baseUrl}/api/v1/category/create-category`,
         categorytData,
       );
       if (data?.success) {
@@ -28,7 +29,7 @@ const CreateCategory = () => {
         toast.error(data.message);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       // toast.error("somthing went wrong in input form");
     }
   };
@@ -36,12 +37,12 @@ const CreateCategory = () => {
   //get all cat
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get("/api/v1/category/get-category");
+      const { data } = await axios.get(`${baseUrl}/api/v1/category/get-category`);
       if (data?.success) {
         setCategories(data?.category);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error("Something wwent wrong in getting catgeory");
     }
   };
@@ -125,7 +126,7 @@ const CreateCategory = () => {
                         <>
                           <tr>
                             <td key={c._id}>{c.name}</td>
-                            <td><img key={c.id} alt={c.name} className="admin-img" src={`/api/v1/category/category-photo/${c._id}`}/></td>
+                            <td><img key={c.id} alt={c.name} className="admin-img" src={`${baseUrl}/api/v1/category/category-photo/${c._id}`}/></td>
                             <td>
                               <button className="btn btn-sm btn-primary ms-2">Edit</button>
                             </td>

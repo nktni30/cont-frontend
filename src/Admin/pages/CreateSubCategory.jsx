@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { Select } from "antd";
 // import { useNavigate } from "react-router-dom";
+const baseUrl = "https://conterials-backend.onrender.com"
 const { Option } = Select;
 
 const CreateSubCategory = () => {
@@ -15,12 +16,12 @@ const CreateSubCategory = () => {
   // get all category fro dropdown
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get("/api/v1/category/get-category");
+      const { data } = await axios.get(`${baseUrl}/api/v1/category/get-category`);
       if (data?.success) {
         setCategories(data?.category);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error("Something wwent wrong in getting catgeory");
     }
   };
@@ -29,13 +30,13 @@ const CreateSubCategory = () => {
 
   const getAllSubCategory = async () => {
     try {
-      const { data } = await axios.get("/api/v1/subcategory/get-subcategory");
+      const { data } = await axios.get(`${baseUrl}/api/v1/subcategory/get-subcategory`);
       if (data?.success) {
         setSubCategory(data?.subcategory);
         // console.log(data);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error("Something wwent wrong in getting sub-catgeory");
     }
   };
@@ -54,19 +55,18 @@ const CreateSubCategory = () => {
       const subCategoryData = new FormData();
       subCategoryData.append("subcategoryname", subcategoryname);
       subCategoryData.append("category", category);
-      const { data } = axios.post(
-        "/api/v1/subcategory/create-subcategory",
+      const { data } = axios.post(`${baseUrl}/api/v1/subcategory/create-subcategory`,
         subCategoryData,
       );
       if (data?.success) {
         toast.error(data?.message);
         getAllSubCategory();
       } else {
-        toast.success(" subcategory Created Successfully");
+        toast.success("subcategory Created Successfully");
         
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error("something went wrong");
     }
   };

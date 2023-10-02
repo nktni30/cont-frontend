@@ -10,6 +10,7 @@ const Whatsapp = () => {
     notification
     avatar={Whatsimg}
     notificationSound
+    chatMessage='Free Consulting, Free Quotation, Drop a Message'
     />
   )
 }

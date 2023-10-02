@@ -3,6 +3,8 @@ import Footer from "../components/Footer";
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
+const baseUrl = "https://conterials-backend.onrender.com";
+
 const SingleProduct = () => {
 
   const params = useParams()
@@ -17,10 +19,10 @@ const SingleProduct = () => {
   //getproducts
   const getProduct = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/product/get-product/${params.slug}`);
+      const { data } = await axios.get(`${baseUrl}/api/v1/product/get-product/${params.slug}`);
       setProduct(data?.product);
     } catch (error) {
-      console.log(error)
+      // console.log(error)
     }
   }
 
@@ -36,7 +38,7 @@ const SingleProduct = () => {
         <div className='row'>
           <div className="col-md-6">
             <figure>
-              <img className='img-fluid' alt={product?.productname} src={`/api/v1/product/product-photo/${product._id}`} />
+              <img className='img-fluid' alt={product?.productname} src={`${baseUrl}/api/v1/product/product-photo/${product._id}`} />
             </figure>
             {/* {JSON.stringify(product, null, 4)} */}
             {/* <ProdSlider prodimgs={image} /> */}
@@ -48,7 +50,7 @@ const SingleProduct = () => {
               </div>
               <div className='col-6 d-flex justify-content-end'>
                
-                <img alt={product} className='single-brand-img' src={`/api/v1/brand/brand-photo/${product?.brandname?._id}`} />
+                <img alt={product} className='single-brand-img' src={`${baseUrl}/api/v1/brand/brand-photo/${product?.brandname?._id}`} />
               </div>
             </div>
             <div className="row mb-3">

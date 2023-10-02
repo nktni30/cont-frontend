@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Footer from "../components/Footer";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+const baseUrl = "https://conterials-backend.onrender.com"
 
 
 const ByBrands = () => {
@@ -12,7 +13,7 @@ const ByBrands = () => {
   //getall products
   const getAllProductsByBrand = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/product/get-product/brandname/${params.id}`);
+      const { data } = await axios.get(`${baseUrl}/api/v1/product/get-product/brandname/${params.id}`);
       setProducts(data.products);
     } catch (error) {
       console.log(error);
@@ -38,7 +39,7 @@ const ByBrands = () => {
           <div className="row">
             <div className="col-sm-3 col-md- col-lg-3">
               <div className="brand-logo-container d-flex align-items-center">
-                <img alt={products?.brandname} className='brand-logo' src={`/api/v1/brand/brand-photo/${params.id}`} />
+                <img alt={products?.brandname} className='brand-logo' src={`${baseUrl}/api/v1/brand/brand-photo/${params.id}`} />
               </div>
 
             </div>
@@ -60,7 +61,7 @@ const ByBrands = () => {
                           <div className="prod-img d-flex justify-content-center align-items-center">
                             <img
                               className="img-fluid"
-                              src={`/api/v1/product/product-photo/${p?._id}`}
+                              src={`${baseUrl}/api/v1/product/product-photo/${p?._id}`}
                               alt={p.name}
                             />
                           </div>

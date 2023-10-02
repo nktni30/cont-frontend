@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
 import AdminMenu from "../components/AdminMenu";
 import axios from "axios";
+
+const baseUrl = "https://conterials-backend.onrender.com"
+
 const Products = () => {
   const [products, setProducts] = useState([]);
 
   //getall products
   const getAllProducts = async () => {
     try {
-      const { data } = await axios.get("/api/v1/product/get-product");
+      const { data } = await axios.get(`${baseUrl}/api/v1/product/get-product`);
       setProducts(data.products);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
 
     }
   };
@@ -31,12 +34,12 @@ const Products = () => {
             {products?.map((p) => (
               <div
                 key={p._id}
-                to={`/dashboard/admin/product/${p.slug}`}
+                to={`${baseUrl}/dashboard/admin/product/${p.slug}`}
                 className="product-link"
               >
                 <div className="card m-2" style={{ width: "18rem" }}>
                   <img
-                    src={`/api/v1/product/product-photo/${p._id}`}
+                    src={`${baseUrl}/api/v1/product/product-photo/${p._id}`}
                     className="card-img-top"
                     alt={p.name}
                   />

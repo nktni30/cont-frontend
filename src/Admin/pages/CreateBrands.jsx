@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 // import CategoryForm from "../../components/Form/CategoryForm";
 // const { Option } = Select;
+const baseUrl = "https://conterials-backend.onrender.com"
 
 const CreateBrand = () => {
 
@@ -22,17 +23,17 @@ const CreateBrand = () => {
       brandData.append("brandname", brandname);
       // brandData.append("category", category);
       brandData.append("photo", photo);
-      const { data } = await axios.post("/api/v1/brand/create-brand",
+      const { data } = await axios.post(`${baseUrl}/api/v1/brand/create-brand`,
         brandData,
       );
       if (data?.success) {
         toast.success(`${brandname} is created`);
         getAllBrand();
       } else {
-        toast.error(data.message);
+        // toast.error(data.message);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       // toast.error("somthing went wrong in input form");
     }
   };
@@ -40,12 +41,12 @@ const CreateBrand = () => {
   //get all cat
   const getAllBrand = async () => {
     try {
-      const { data } = await axios.get("/api/v1/brand/get-brand");
+      const { data } = await axios.get(`${baseUrl}/api/v1/brand/get-brand`);
       if (data?.success) {
         setBrands(data?.brand);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error("Something wwent wrong in getting catgeory");
     }
   };
@@ -162,7 +163,7 @@ const CreateBrand = () => {
                     <>
                       <tr>
                         <td key={b._id}>{b.brandname}</td>
-                        <td><img alt={b.brandname} className="admin-img" src={`/api/v1/brand/brand-photo/${b._id}`} /></td>
+                        <td><img alt={b.brandname} className="admin-img" src={`${baseUrl}/api/v1/brand/brand-photo/${b._id}`} /></td>
                         <td>
                           <button className="btn btn-primary ms-2">Edit</button>
                         </td>

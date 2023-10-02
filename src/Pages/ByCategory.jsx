@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
+const baseUrl = "https://conterials-backend.onrender.com"
 
 const ByCategory = () => {
 
@@ -13,10 +14,10 @@ const ByCategory = () => {
   //getall products
   const getAllProductsByCategory = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/product/get-product/category/${params.id}`);
+      const { data } = await axios.get(`${baseUrl}/api/v1/product/get-product/category/${params.id}`);
       setProducts(data.products);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       // toast.error("Someething Went Wrong");
     }
   };
@@ -26,12 +27,12 @@ const ByCategory = () => {
   //get category by id
   const getCategory = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/category/get-category/${params.id}`);
+      const { data } = await axios.get(`${baseUrl}/api/v1/category/get-category/${params.id}`);
       if (data?.success) {
         setCategory(data?.category);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       // toast.error("Something wwent wrong in getting catgeory");
     }
   };
@@ -80,7 +81,7 @@ const ByCategory = () => {
                               <div className="prod-img d-flex justify-content-center align-items-center">
                                 <img
                                   className="img-fluid"
-                                  src={`/api/v1/product/product-photo/${p?._id}`}
+                                  src={`${baseUrl}/api/v1/product/product-photo/${p?._id}`}
                                   alt={p?.name}
                                 />
                               </div>
