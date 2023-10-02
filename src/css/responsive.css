@@ -1,0 +1,231 @@
+:root {
+      --con-bg-color: #F4F4F4;
+      --con-primary: #1F70A9;
+      --con-secondary: #EA833C;
+      --con-yellow: #FBB019;
+      --con-light-primary: #319FCD;
+      --con-dark-primary: #1F4497;
+      --text-color: #252525;
+      --light-text: #7D7D7D;
+}
+
+
+@media screen and (max-width: 600px) {
+      .pro-card {
+            height: 15rem;
+            width: 100%;
+            background-color: white;
+            overflow: hidden;
+            padding: 1rem;
+      }
+
+      .img-box {
+            height: 10rem;
+            width: 100%;
+      }
+
+      .pro-card img {
+            height: auto;
+            width: 100%;
+            top: 0;
+      }
+
+      .con-card-title {
+            margin-top: .5rem;
+            font-size: medium;
+            color: var(--text-color);
+      }
+
+      .ad-banner {
+            width: 100%;
+            height: auto;
+      }
+
+      .ad-banner img {
+            width: 100%;
+            height: auto;
+      }
+
+
+
+      /* Promise icons */
+
+      .promise-icons {
+            font-size: 4rem;
+            color: var(--light-text);
+      }
+
+      /* contact-card */
+
+      .contact-icon {
+            font-size: 3rem;
+            color: var(--con-primary);
+      }
+
+      .contact-font {
+            font-size: medium;
+            font-weight: 500;
+      }
+
+      /* products */
+
+
+      .card {
+            height: 13rem !important;
+      }
+
+      .sort-products {
+            border: none;
+            background-color: white;
+            height: 2rem;
+            width: auto;
+            font-weight: 500;
+      }
+
+      .prod-img {
+            height: 12rem !important;
+            width: auto;
+
+      }
+
+
+      /* brands slider */
+
+      /* Brand card */
+      .brand-card {
+            height: 5.5rem;
+            width: 5.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            padding: 1rem;
+      }
+
+      .brand-img {
+            width: 100%;
+            height: auto;
+      }
+
+
+      /* about page */
+
+      .about-banner {
+            height: auto;
+      }
+
+      .about-banner-img {
+            height: auto;
+            width: 100%;
+            bottom: 0 !;
+      }
+
+
+      /* Footer */
+
+      .footer-icons span {
+            font-size: 2rem;
+            color: white;
+      }
+
+      .footer-heading {
+            font-weight: 600 !important;
+      }
+
+      .footer-links {
+            line-height: 2rem;
+            list-style-type: none;
+      }
+
+      .con-footer-link {
+            color: white;
+            text-decoration: none;
+      }
+
+
+      .footer-hr {
+            border: 1px solid white !important;
+            width: 80% !important;
+            margin: 0 auto;
+      }
+
+
+      /* product Filter */
+
+      .product-filter {
+            height: auto;
+            width: 80%;
+            background-color: white;
+            z-index: 99;
+            /* position: absolute; */
+            margin: 10%;
+            padding: 1.5rem;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            /* display: none; */
+      }
+
+      .show-product-filter {
+            height: auto;
+            width: 80%;
+            background-color: white;
+            z-index: 99;
+            position: absolute;
+            margin: 10%;
+            padding: 1.5rem;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+
+
+      .filter-categories {
+            background-color: var(--con-bg-color);
+            display: inline-block;
+            margin: .1rem .2rem;
+            border-radius: .2rem;
+            position: relative;
+            overflow: hidden;
+      }
+
+      .filter-categories label {
+            float: left;
+      }
+
+      .filter-categories label span {
+            text-align: center;
+            padding: .2rem .4rem;
+            display: block;
+            font-size: small;
+      }
+
+      .filter-categories label input {
+            position: absolute;
+            display: none;
+            color: var(--light-text) !important;
+      }
+
+      .filter-categories label input+span {
+            color: var(--light-text);
+      }
+
+      .filter-categories input:checked+span {
+            color: #ffffff;
+      }
+
+      .cat input:checked+span {
+            background-color: var(--con-secondary);
+      }
+
+
+      /* single product */
+
+      .product-img-container {
+            width: 100%;
+            height: 50vh;
+
+      }
+
+      .single-prod-img {
+            width: 100%;
+            height: auto;
+      }
+
+}
