@@ -12,12 +12,10 @@ const Banner = () => {
                               <div className="rwo">
                               <div className='mt-lg-0 mt-sm-5'>
                               <h1 className='text-center text-lg-start text-white'>Conterials.com</h1>
-                              <h6 className='text-center text-lg-start text-white'>
-                                    We are<span> Open </span> Now
-                                    Please Visit
-                                    
-                                    Offline Store at : Pragati Path, Samlong Ranchi-01
-                              </h6>
+                              <h5 className='text-center text-lg-start text-white'>
+                                    <span> Wholesale </span>
+                                    Procurement Platform
+                              </h5>
                                     
                               </div>
                               </div>
