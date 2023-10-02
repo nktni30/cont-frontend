@@ -185,7 +185,7 @@ const Products = () => {
                             <div className="col-lg-12 col-5">
                               <div className="prod-img d-flex justify-content-center align-items-center">
                                 <img
-                                  className="img-fluid"
+                                  className="product-img"
                                   src={`${baseUrl}/api/v1/product/product-photo/${p?._id}`}
                                   alt={p.name}
                                 />
