@@ -28,6 +28,10 @@
             padding: 1rem;
       }
 
+      .mob-banner{
+            margin-top: 1rem;
+      }
+
       .img-box {
             height: 10rem;
             width: 100%;
@@ -237,5 +241,17 @@
             width: 100%;
             height: auto;
       }
+
+      .brand-logo-container{
+            width: 15rem;
+            height:3rem;
+           
+          }
+          
+          .brand-logo{
+            width: auto;
+            height: 100%;
+            padding: .5rem 0;
+          }
 
 }

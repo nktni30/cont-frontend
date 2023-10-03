@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Footer from "../components/Footer";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import stepsBanner from '../img/banner/StepstoOrder.png';
 const baseUrl = "https://conterials-backend.onrender.com"
 
 
@@ -28,16 +29,16 @@ const ByBrands = () => {
 
   return (
     <>
-      <div className="container-fluid bg-blue-grad py-5">
-        <h2 className='h2 text-center pt-5 text-white'>
-          Products By Brand
-        </h2>
+      <div className="container-fluid mt-5 mt-sm-5 p-0">
+
+          <img alt="steps-banner" className="img-fluid mob-banner" src={stepsBanner}/>
+     
       </div>
 
       <div className="container-fluid bg-white">
         <div className="container">
           <div className="row">
-            <div className="col-sm-3 col-md- col-lg-3">
+            <div className="col-sm-3 col-md-3 col-lg-3">
               <div className="brand-logo-container d-flex align-items-center">
                 <img alt={products?.brandname} className='brand-logo' src={`${baseUrl}/api/v1/brand/brand-photo/${params.id}`} />
               </div>
@@ -67,7 +68,7 @@ const ByBrands = () => {
                           </div>
                         </div>
                         <div className="col-7 col-lg-12 justify-content-start">
-                          <div className="product-name my-3">{p?.productname} | {p?.brandname?.brandname}</div>
+                          <div className="product-name my-3">{p?.productname} |{p?.brandname?.brandname}</div>
                           {p?.offer ? (
                             <div className="offer-tag my-2 py-2 px-3">ON OFFER</div>
                           ) : (

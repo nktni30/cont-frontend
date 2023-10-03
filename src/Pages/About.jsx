@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import { BsCheck2All, BsGrid3X3GapFill, BsPatchCheckFill } from 'react-icons/bs';
 import BannerImg from '../img/about/banner-img.png';
 import OurMission from '../img/about/our-mission.jpg';
+import Founder from '../img/about/Founder.jpg';
 
 const About = () => {
   return (
@@ -26,24 +27,27 @@ const About = () => {
       <div className='container'>
         <div className='row mb-5'>
           <div className='col-sm-6'>
-            <h4 className='text-center h4 mb-3'>
+          <h4 className='h4 mb-3'>
               Company Profile
             </h4>
+            <p className='text-start'>Welcome to Conterials.com, your ultimate one-stop solution for all your construction needs, whether it's new construction, repair, or renovation. With a strong commitment to excellence, we take pride in offering industry leading products, supported by the latest and State of the art Technology, to ensure a hassle free and seamless construction journey of our valued customers.</p>
           </div>
           <div className='col-sm-6'>
-            <p className='text-start'>Welcome to Conterials.com, your ultimate one-stop solution for all your construction needs, whether it's new construction, repair, or renovation. With a strong commitment to excellence, we take pride in offering industry leading products, supported by the latest and State of the art Technology, to ensure a hassle free and seamless construction journey of our valued customers.</p>
+           
+            <img alt='founder' className='img-fluid' src={Founder} />
           </div>
         </div>
 
 
         <div className='row mb-5'>
           <div className='col-sm-6 mb-3'>
-            <h4 className='text-center h4 mb-3'>
-              Our Mission
-            </h4>
+           
             <img src={OurMission} className='img-fluid' alt='Our-Mission' />
           </div>
           <div className='col-sm-6'>
+          <h4 className='h4 mb-3'>
+              Our Mission
+            </h4>
             <p className='text-start'>At Conterials.com, our mission is to empower homeowners , builders and contractors with the highest quality construction materials and innovative solutions. We strive to be your trusted partner, providing you with the tools and resources to bring your construction projects to life.</p>
           </div>
         </div>
@@ -54,7 +58,7 @@ const About = () => {
               <div className='card-body'>
                 <div className='about-icons'>
                   <span>
-                    <BsPatchCheckFill/>
+                    <BsPatchCheckFill />
                   </span>
                 </div>
                 <div className='h6 about-card-title mb-3'>
@@ -109,7 +113,7 @@ const About = () => {
         <FAQs id='faqs' />
 
       </div>
- <Footer/>
+      <Footer />
 
     </>
   )

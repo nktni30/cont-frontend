@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Footer from "../components/Footer";
+import stepsBanner from '../img/banner/StepstoOrder.png';
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
@@ -52,17 +53,15 @@ const ByCategory = () => {
 
   return (
     <>
-      <div className="container-fluid bg-blue-grad py-5">
-        <h2 className='h2 text-center pt-5 text-white'>
-          Products By Category
-        </h2>
+      <div className="container-fluid mt-5 mt-sm-5 p-0">
+      <img alt="steps-banner" className="img-fluid mob-banner" src={stepsBanner}/>
       </div>
 
       <div className="container-fluid bg-white">
       <div className="container">
             <div className="row">
                   <div className="col-sm-12 col-md-12 col-lg-12">
-                  <h5 className="py-3">Category: <span className="font-weight-noraml">{category?.name}</span></h5>
+                  <h5 className="py-3 h6">Category: <span className="font-weight-noraml">{category?.name}</span></h5>
                   </div>
             </div>
             </div>
